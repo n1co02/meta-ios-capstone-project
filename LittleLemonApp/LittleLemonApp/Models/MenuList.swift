@@ -12,7 +12,7 @@ struct MenuList: Codable {
     static func getMenuData(viewContext: NSManagedObjectContext) {
         PersistenceController.shared.clear()
         
-        let url = Bundle.main.url(forResource: "menu", withExtension: "json")
+        let url = URL(string: "https://raw.githubusercontent.com/n1co02/meta-ios-capstone-project/main/LittleLemonApp/API/menu.json")
         let request = URLRequest(url: url!)
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request) { data, response, error in
